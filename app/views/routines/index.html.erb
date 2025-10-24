@@ -1,0 +1,18 @@
+<h1 class="text-primary text-center">Routines</h1>
+
+<div class="grid">
+  <% @routines.each do |routine| %>
+    <div class="card align-items-center">
+      <% if routine.photo.attached? %>
+        <%= image_tag routine.photo, class: "card-img" %>
+      <% else %>
+        <div class="card-img" style="background:#eee;"></div>
+      <% end %>
+
+      <div class="card-body">
+        <h3 class="card-title"><%= link_to routine.name, routine_path(routine) %></h3>
+        <p class="card-meta"><%= pluralize(routine.assignments.count, "exercise") %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

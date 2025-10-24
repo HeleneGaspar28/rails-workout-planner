@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
   root "routines#index"
 
-  resources :routines, only: [:index, :show, :new, :create] do
-    resources :assignments, only: [:new, :create]
+  resources :routines do
+    resources :assignments, only: [:new, :create, :destroy]
   end
 
-  resources :assignments, only: [:destroy]
+
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
