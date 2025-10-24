@@ -20,10 +20,3 @@ Users can create routines, upload cover images, and add exercises to each routin
 - Active Storage for image uploads  
 - Simple Form for forms
 
-## Setup
-
-1. Clone the repository  
-   ```bash
-   git clone https://github.com/<your-username>/workout-planner.git
-   cd workout-planner
-
