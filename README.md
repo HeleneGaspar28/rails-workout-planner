@@ -1,24 +1,29 @@
-# README
+# Workout Planner
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Rails app to create and manage workout routines.  
+Users can create routines, upload cover images, and add exercises to each routine.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- View all routines  
+- Create a new routine with a name and cover image  
+- View details of each routine and its exercises  
+- Add or remove exercises from a routine  
+- Delete routines  
+- Clean responsive layout with Bootstrap
 
-* System dependencies
+## Tech Stack
 
-* Configuration
+- Ruby on Rails 7  
+- PostgreSQL  
+- Importmap + Bootstrap 5  
+- Active Storage for image uploads  
+- Simple Form for forms
 
-* Database creation
+## Setup
 
-* Database initialization
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/<your-username>/workout-planner.git
+   cd workout-planner
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
