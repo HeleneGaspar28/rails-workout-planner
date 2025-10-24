@@ -10,8 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 0) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_24_085837) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "assignments", force: :cascade do |t|
+    t.text "note"
+    t.integer "sets"
+    t.integer "reps"
+    t.bigint "exercise_id", null: false
+    t.bigint "routine_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercise_id"], name: "index_assignments_on_exercise_id"
+    t.index ["routine_id"], name: "index_assignments_on_routine_id"
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "category"
+    t.string "equipment"
+    t.string "difficulty"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "routines", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "assignments", "exercises"
+  add_foreign_key "assignments", "routines"
 end
